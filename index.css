@@ -1,0 +1,110 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  animation: gradientShift 15s ease infinite;
+  color: #fff;
+  text-align: center;
+}
+
+/* Gradient Background Animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Logo */
+.logo {
+  width: 120px;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+/* Button Box with Glassmorphism */
+.btn-box {
+  width: 280px;
+  height: 280px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  position: relative;
+}
+
+/* Microphone Button with Pulse */
+button {
+  background-color: white;
+  border: 5px solid #00d9ff;
+  border-radius: 50%;
+  font-size: 60px;
+  padding: 20px;
+  color: #00d9ff;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.7);
+  transition: transform 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+button:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 30px rgba(0, 217, 255, 1);
+}
+
+/* Titles */
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .btn-box {
+    width: 200px;
+    height: 200px;
+  }
+
+  button {
+    font-size: 40px;
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+}
